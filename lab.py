@@ -90,21 +90,21 @@ def make_training_args(
     batch_size: int = 8,
     seed: int = 42,
 ) -> TrainingArguments:
-    """Return a TrainingArguments configured for fine-tuning."""
-    # FIX: removed the redundant re-assignment of eval_strategy / save_strategy
-    # after construction — they are already set correctly inside TrainingArguments.
-    return TrainingArguments(
-    output_dir=output_dir,
-    learning_rate=lr,
-    num_train_epochs=epochs,
-    per_device_train_batch_size=batch_size,
-    per_device_eval_batch_size=batch_size,
-    seed=seed,
-    eval_strategy="epoch",
-    save_strategy="epoch",
-    logging_steps=50,
-    report_to="none",       
-)
+    args = TrainingArguments(
+        output_dir=output_dir,
+        learning_rate=lr,
+        num_train_epochs=epochs,
+        per_device_train_batch_size=batch_size,
+        per_device_eval_batch_size=batch_size,
+        seed=seed,
+        eval_strategy="epoch",
+        save_strategy="epoch",
+        logging_steps=50,
+        report_to="none",
+    )
+    args.eval_strategy = args.eval_strategy.value
+    args.save_strategy = args.save_strategy.value
+    return args
 
 
 def compute_metrics(eval_pred):
