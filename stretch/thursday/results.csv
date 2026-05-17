@@ -1,0 +1,29 @@
+id,hypothesis_category,text,expected_label,rationale,predicted_label,predicted_probability,correct
+1,negation,"This app did not crash even once, it's actually very stable.",positive,Tests if model catches negation + positive meaning,neutral,0.5038,False
+2,negation,"The update didn't make it any better, still slow and buggy.",negative,Negation of improvement,negative,0.4912,True
+3,negation,"I wouldn't say it's bad, but it's not great either.",neutral,Double negation / soft negative,neutral,0.8175,True
+4,lexical_trigger,The app is no longer reliable after the last update.,negative,Positive word 'reliable' with negation,negative,0.8036,True
+5,lexical_trigger,Finally a good app that doesn't drain my battery!,positive,Positive trigger with negation,positive,0.7737,True
+6,lexical_trigger,This used to be amazing but now it's just okay.,neutral,Past positive trigger now neutral,neutral,0.6562,True
+7,domain_shift,The new iPhone 16 has excellent battery life compared to previous models.,positive,Phone review style (domain shift),positive,0.6965,True
+8,domain_shift,"This restaurant has the best pizza in town, highly recommended!",positive,Restaurant review - domain shift,positive,0.8878,True
+9,domain_shift,"The movie was too long and boring, I almost fell asleep.",negative,Movie review - domain shift,negative,0.8001,True
+10,length_extreme,Great!,positive,Very short positive,positive,0.7977,True
+11,length_extreme,Terrible app.,negative,Very short negative,negative,0.9716,True
+12,length_extreme,Works fine I guess.,neutral,Very short neutral,positive,0.7105,False
+13,sarcasm,"Oh wow, another useless update. Thanks developers, really appreciate it.",negative,Sarcastic positive words,negative,0.7214,True
+14,sarcasm,"Best app ever, keeps crashing every 2 minutes.",negative,Classic sarcasm,positive,0.744,False
+15,sarcasm,"Super fast and smooth, love waiting 10 seconds for every screen.",negative,Sarcastic,positive,0.9067,False
+16,other,The UI is beautiful but the functionality is completely broken.,negative,Mixed sentiment (conflicting signals),neutral,0.7057,False
+17,other,"It does what it needs to do, nothing more nothing less.",neutral,Very balanced neutral,neutral,0.6488,True
+18,negation,"The app is not slow at all, it runs perfectly.",positive,Negation testing,neutral,0.5718,False
+19,lexical_trigger,Customer support is helpful... said no one ever.,negative,Lexical trigger with sarcasm,positive,0.7762,False
+20,domain_shift,The latest Windows update ruined my workflow completely.,negative,Software OS review domain,negative,0.9592,True
+21,length_extreme,Absolutely love this app!!!,positive,Very short but strong positive,positive,0.6153,True
+22,length_extreme,This is the worst banking app I have ever used in my life and I have used many.,negative,Very long negative,negative,0.972,True
+23,sarcasm,"Yeah sure, this app is totally worth the subscription fee.",negative,Sarcasm about value,neutral,0.6083,False
+24,other,"Sometimes it works, sometimes it doesn't, depends on my mood.",neutral,Uncertain / inconsistent behavior,neutral,0.6897,True
+25,negation,I can't complain about the performance.,positive,Subtle negation / litotes,neutral,0.6831,False
+26,lexical_trigger,Used to be my favorite app until they added all these ads.,negative,Past positive trigger,negative,0.877,True
+27,sarcasm,"Thanks for the constant notifications, just what I needed at 3 AM.",negative,Sarcastic,positive,0.8019,False
+28,other,"It's okay, nothing special but gets the job done.",neutral,Mild neutral review,neutral,0.5793,True
